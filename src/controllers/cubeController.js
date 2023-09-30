@@ -19,4 +19,9 @@ router.post("/create", (req, res) => {
   res.redirect("/");
 });
 
+router.get("/:cueId/details", (req, res) => {
+  const cube = cubManager.gerOne(req.params.cueId);
+  res.render("details", { cube });
+});
+
 module.exports = router;
