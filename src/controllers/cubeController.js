@@ -2,7 +2,7 @@ const router = require("express").Router();
 const cubManager = require("../managers/cubeManager");
 
 router.get("/create", (req, res) => {
-  console.log(cubManager.allCubs());
+  //console.log(cubManager.allCubs());
   res.render("create");
 });
 
