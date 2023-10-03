@@ -1,15 +1,15 @@
 const router = require("express").Router();
-const cubManager = require("../managers/cubeManager");
+const cubeManager = require("../managers/cubeManager");
 
 router.get("/create", (req, res) => {
   //console.log(cubManager.allCubs());
   res.render("create");
 });
 
-router.post("/create", (req, res) => {
+router.post("/create", async (req, res) => {
   const { name, description, imageUrl, difficultyLevel } = req.body;
 
-  cubManager.create({
+  await cubManager.create({
     name,
     description,
     imageUrl,
@@ -19,8 +19,8 @@ router.post("/create", (req, res) => {
   res.redirect("/");
 });
 
-router.get("/:cueId/details", (req, res) => {
-  const cube = cubManager.gerOne(req.params.cueId);
+router.get("/:cubeId/details", async (req, res) => {
+  const cube = await cubeManager.getOne(req.params.cubeId).lean();
 
   if (!cube) {
     return res.redirect("/404");

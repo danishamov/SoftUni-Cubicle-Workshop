@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const cubeSchema = new mongoose.Schema({
   name: String,
   description: String,
-  image: String,
+  imageUrl: String,
   difficultyLevel: Number,
 });
 
