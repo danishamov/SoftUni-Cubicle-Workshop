@@ -28,7 +28,7 @@ router.get("/:cubeId/details", async (req, res) => {
   res.render("details", { cube });
 });
 
-router.get("/:cubeId/attach-accessories", (req, res) => {
+router.get("/:cubeId/attach-accessory", (req, res) => {
   res.redirect("accessory/attach");
 });
 
