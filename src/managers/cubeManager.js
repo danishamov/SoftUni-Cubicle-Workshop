@@ -1,17 +1,15 @@
 const Cube = require("../models/Cube");
 
-const cubes = [];
-
-exports.allCubs = async (search, from, to) => {
+exports.allCubes = async (search, from, to) => {
   let result = await Cube.find().lean();
 
+  // TODO : use mongoose to filter in the db
   if (search) {
     result = result.filter((cube) =>
       cube.name.toLowerCase().includes(search.toLowerCase())
     );
   }
 
-  // TODO : use mongoose to filter in the db
   if (from) {
     result = result.filter((cube) => cube.difficultyLevel >= Number(from));
   }
@@ -30,5 +28,5 @@ exports.create = async (cubeData) => {
 
   await cube.save();
 
-  return cube;
+  return cube.save();
 };
