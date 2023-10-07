@@ -1,7 +1,7 @@
 const Accessory = require("../models/Accessory");
 const Cube = require("../models/Cube");
 
-exports.allCubes = async (search, from, to) => {
+exports.getAll = async (search, from, to) => {
   let result = await Cube.find().lean();
 
   // TODO : use mongoose to filter in the db
