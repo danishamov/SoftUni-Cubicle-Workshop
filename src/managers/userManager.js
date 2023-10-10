@@ -3,8 +3,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("../lib/jwt");
 
 const User = require("../models/User");
-
-const SECRET = "it is a secret";
+const { SECRET } = require("../config/config");
 
 exports.register = (userData) => User.create(userData);
 

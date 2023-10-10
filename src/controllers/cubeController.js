@@ -4,6 +4,8 @@ const accessoryManager = require("../managers/accessoryManager");
 
 router.get("/create", (req, res) => {
   //console.log(cubManager.allCubs());
+  //console.log(req.user);
+
   res.render("create");
 });
 
