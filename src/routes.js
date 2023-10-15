@@ -9,8 +9,8 @@ router.use(homeController);
 router.use("/cubes", cubeController);
 router.use("/accessories", accessoryController);
 router.use("/users/", userController);
-router.use("*", (req, res) => {
-  res.redirect("/404");
-});
+// router.use("*", (req, res) => {
+//   res.redirect("/404");
+// });
 
 module.exports = router;
